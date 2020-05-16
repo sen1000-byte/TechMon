@@ -117,7 +117,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="attackAction" destination="Tgf-7F-fEj" eventType="touchUpInside" id="3hN-bA-4LH"/>
+                                    <action selector="attackAction" destination="Tgf-7F-fEj" eventType="touchUpInside" id="bDF-Tk-5Kq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOW-qe-MBe">
@@ -127,6 +127,9 @@
                                 <state key="normal" title="ためる" backgroundImage="gold_button.png">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="tameruAction" destination="Tgf-7F-fEj" eventType="touchUpInside" id="MeU-5Y-hcz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPg-BS-350">
                                 <rect key="frame" x="149" y="709" width="117" height="92"/>
@@ -135,9 +138,12 @@
                                 <state key="normal" title="ファイア" backgroundImage="gold_button.png">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="fireAction" destination="Tgf-7F-fEj" eventType="touchUpInside" id="1PX-Qf-Jxe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-bh-U8C">
-                                <rect key="frame" x="35" y="101" width="345" height="74"/>
+                                <rect key="frame" x="20" y="101" width="360" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.21146378930000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -153,7 +159,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DR-8T-1bl">
-                                <rect key="frame" x="57" y="128" width="46" height="23"/>
+                                <rect key="frame" x="20" y="128" width="104" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -241,14 +247,15 @@
                         <viewLayoutGuide key="safeArea" id="wjW-L7-aCV"/>
                     </view>
                     <connections>
-                        <outlet property="enemyHPLabel" destination="lWn-lJ-vIn" id="RWd-SJ-L0j"/>
-                        <outlet property="enemyImageView" destination="65v-fk-ukt" id="PwT-ew-Lcm"/>
-                        <outlet property="enemyMPLabel" destination="vha-Ww-bQb" id="x36-2q-Tal"/>
-                        <outlet property="enemyNameLabel" destination="1DR-8T-1bl" id="kua-EK-Fv7"/>
-                        <outlet property="playerHPLabel" destination="49k-Ax-gux" id="M8p-Gm-I7P"/>
-                        <outlet property="playerImageView" destination="0hV-H6-MxY" id="pfB-e2-SA4"/>
-                        <outlet property="playerMPLabel" destination="JCC-yA-93d" id="wlS-oP-ODH"/>
-                        <outlet property="playerNameLabel" destination="EKY-0Y-ECq" id="7me-wc-b8p"/>
+                        <outlet property="enemyHPLabel" destination="lWn-lJ-vIn" id="epB-04-4HV"/>
+                        <outlet property="enemyImageView" destination="65v-fk-ukt" id="BPe-7v-rZS"/>
+                        <outlet property="enemyMPLabel" destination="vha-Ww-bQb" id="sWt-lg-Fh9"/>
+                        <outlet property="enemyNameLabel" destination="1DR-8T-1bl" id="Ii5-An-6S9"/>
+                        <outlet property="playerHPLabel" destination="49k-Ax-gux" id="qT4-qF-1mD"/>
+                        <outlet property="playerImageView" destination="0hV-H6-MxY" id="hrH-o4-Z8K"/>
+                        <outlet property="playerMPLabel" destination="JCC-yA-93d" id="FTK-xY-Oq0"/>
+                        <outlet property="playerNameLabel" destination="EKY-0Y-ECq" id="VRz-Wq-k38"/>
+                        <outlet property="playerTPLable" destination="tLR-Zh-dej" id="jRg-b3-aeO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vD5-7O-bO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
