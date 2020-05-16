@@ -85,15 +85,15 @@ class BattleViewController: UIViewController {
     
     @objc func updateGame() {
         player.currentMP += 1
-        if player.currentMP >= 20 {
+        if player.currentMP >= player.maxMP {
             isPlayerAttackAvailable = true
-            player.currentMP = 20
+            player.currentMP = player.maxMP
         }else {
             isPlayerAttackAvailable = false
         }
         
         enemy.currentMP += 1
-        if enemy.currentMP >= 35 {
+        if enemy.currentMP >= enemy.maxMP {
             enemyAttack()
             enemy.currentMP = 0
         }
@@ -108,7 +108,7 @@ class BattleViewController: UIViewController {
         techMonManager.damageAnimation(imageView: playerImageView)
         techMonManager.playSE(fileName: "SE_attack")
         
-        player.currentHP -= 20
+        player.currentHP -= enemy.attackPoint
         
 //        playerHPLabel.text = "\(playerHP) / 100"
         
