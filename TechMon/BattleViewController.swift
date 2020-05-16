@@ -22,6 +22,9 @@ class BattleViewController: UIViewController {
     
     let techMonManager = TechMonManager.shared
     
+    var player: Character!
+    var enemy: Character!
+    
     var playerHP = 100
     var playerMP = 0
     var enemyHP = 200
@@ -32,6 +35,9 @@ class BattleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        player = techMonManager.player
+        enemy = techMonManager.enemy
         
         playerNameLabel.text = "勇者"
         playerImageView.image = UIImage(named: "yusya.png")
@@ -58,7 +64,7 @@ class BattleViewController: UIViewController {
         techMonManager.stopBGM()
     }
     
-    func updateGame() {
+    @objc func updateGame() {
         playerMP += 1
         if playerMP >= 20 {
             isPlayerAttackAvailable = true
@@ -124,7 +130,7 @@ class BattleViewController: UIViewController {
             enemyHP -= 30
             playerMP = 0
             
-            enemyMPLabel.text = "\(enemyHP) / 200"
+            enemyHPLabel.text = "\(enemyHP) / 200"
             playerMPLabel.text = "\(playerMP) / 20"
             
             if enemyHP <= 0 {
