@@ -39,13 +39,9 @@ class BattleViewController: UIViewController {
         
         playerNameLabel.text = player.name
         playerImageView.image = player.image
-//        playerHPLabel.text = "\(playerHP) / 100"
-//        playerMPLabel.text = "\(playerMP) / 20"
         
         enemyNameLabel.text = enemy.name
         enemyImageView.image = enemy.image
-//        enemyHPLabel.text = "\(enemyHP) / 200"
-//        enemyMPLabel.text = "\(enemyMP) / 35"
         
         updateUI()
         
@@ -71,8 +67,6 @@ class BattleViewController: UIViewController {
          }
      }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         techMonManager.playBGM(fileName: "BGM_battle001")
@@ -97,9 +91,7 @@ class BattleViewController: UIViewController {
             enemyAttack()
             enemy.currentMP = 0
         }
-        
-//        playerMPLabel.text = "\(playerMP) / 20"
-//        enemyMPLabel.text = "\(enemyMP) / 35"
+
         updateUI()
     }
     
@@ -110,13 +102,9 @@ class BattleViewController: UIViewController {
         
         player.currentHP -= enemy.attackPoint
         
-//        playerHPLabel.text = "\(playerHP) / 100"
         
         updateUI()
         
- //       if playerHP <= 0{
- //           finishBattle(vanishImageView: playerImageView, isPlayerWin: false)
- //       }
         judgeBattle()
     }
     
@@ -141,6 +129,9 @@ class BattleViewController: UIViewController {
         }))
         
         present(alert, animated: true, completion: nil)
+        
+        player.resetStatus()
+        enemy.resetStatus()
     }
     
     
@@ -159,14 +150,8 @@ class BattleViewController: UIViewController {
             
             player.currentMP = 0
             
-//            enemyHPLabel.text = "\(enemyHP) / 200"
-//            playerMPLabel.text = "\(playerMP) / 20"
-            
             updateUI()
             
- //           if enemyHP <= 0 {
- //               finishBattle(vanishImageView: enemyImageView, isPlayerWin: true)
-//            }
             judgeBattle()
         }
     }

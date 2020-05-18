@@ -49,6 +49,7 @@ class LobbyViewController: UIViewController {
             stamina -= 50
             staminaLabel.text = "\(stamina) / 100"
             performSegue(withIdentifier: "toBattle", sender: nil)
+
         }else{
             let alert = UIAlertController(
                 title: "バトルに行けません",
